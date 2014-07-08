@@ -5,7 +5,7 @@
 #' @param libraryid the Qualtrics library id.
 #' @export
 getPanels <- function(username, password, libraryid) {
-	url = paste("http://eu.qualtrics.com/Server/RestApi.php?Request=getPanels",
+	url = paste("http://yalesurvey.qualtrics.com/Server/RestApi.php?Request=getPanels",
 				"&User=", username, 
 				"&Password=", password, 
 				"&LibraryID=", libraryid, 
@@ -25,7 +25,7 @@ getPanels <- function(username, password, libraryid) {
 getPanel <- function(username, password, libraryid, panelid, embeddedData=NULL) {
 	#TODO: If we use the XML format, embedded data would be included. 
 	#      Parameter is a comma separated list.
-	url = paste("http://eu.qualtrics.com/Server/RestApi.php?Request=getPanel",
+	url = paste("http://yalesurvey.qualtrics.com/Server/RestApi.php?Request=getPanel",
 				"&User=", username, 
 				"&Password=", password, 
 				"&LibraryID=", libraryid, 
@@ -40,7 +40,7 @@ getPanel <- function(username, password, libraryid, panelid, embeddedData=NULL) 
 }
 
 getPanelXML <- function(username, password, libraryid, panelid) {
-	url = paste("http://eu.qualtrics.com/Server/RestApi.php?Request=getPanel",
+	url = paste("http://yalesurvey.qualtrics.com/Server/RestApi.php?Request=getPanel",
 				"&User=", username, 
 				"&Password=", password, 
 				"&LibraryID=", libraryid, 
@@ -59,7 +59,7 @@ getPanelXML <- function(username, password, libraryid, panelid) {
 #' @param panelid the Qualtrics panel id.
 #' @export
 getPanelMemberCount <- function(username, password, libraryid, panelid) {
-	url = paste("http://eu.qualtrics.com/Server/RestApi.php?Request=getPanelMemberCount",
+	url = paste("http://yalesurvey.qualtrics.com/Server/RestApi.php?Request=getPanelMemberCount",
 				"&User=", username, 
 				"&Password=", password, 
 				"&LibraryID=", libraryid, 
@@ -78,7 +78,7 @@ getPanelMemberCount <- function(username, password, libraryid, panelid) {
 #' @param category the panel's category (optional).
 #' @export
 createPanel <- function(username, password, libraryId, name, category=NULL) {
-	url = paste("http://eu.qualtrics.com/Server/RestApi.php?Request=createPanel",
+	url = paste("http://yalesurvey.qualtrics.com/Server/RestApi.php?Request=createPanel",
 				"&User=", username, 
 				"&Password=", password, 
 				"&LibraryID=", libraryId, 
@@ -103,7 +103,7 @@ createPanel <- function(username, password, libraryId, name, category=NULL) {
 #' @export
 addRecipient <- function(username, password, libraryId, panelId, firstName=NULL, 
 			lastName=NULL, email=NULL, externalDataRef=NULL, embeddedData=NULL) {
-	url = paste("http://eu.qualtrics.com/Server/RestApi.php?Request=addRecipient",
+	url = paste("http://yalesurvey.qualtrics.com/Server/RestApi.php?Request=addRecipient",
 			"&User=", username, 
 			"&Password=", password, 
 			"&LibraryID=", libraryId, 
@@ -131,7 +131,7 @@ addRecipient <- function(username, password, libraryId, panelId, firstName=NULL,
 #' @param recipientId the id for the recipient to return.
 #' @export
 getRecipient <- function(username, password, recipientId, libraryId) {
-	url = paste("http://eu.qualtrics.com/Server/RestApi.php?Request=getRecipient",
+	url = paste("http://yalesurvey.qualtrics.com/Server/RestApi.php?Request=getRecipient",
 				"&User=", username, 
 				"&Password=", password, 
 				"&RecipientID=", recipientId, 
@@ -165,7 +165,7 @@ sendSurveyToPanel <- function(username, password, surveyId, sendDate, fromEmail,
 sendSurveyToIndividual <- function(username, password, surveyId, sendDate, 
 			fromEmail, fromName, subject, messageId, messageLibraryId, panelId, 
 			panelLibraryId, recipientId) {
-	url = paste("http://eu.qualtrics.com/Server/RestApi.php?Request=sendSurveyToIndividual",
+	url = paste("http://yalesurvey.qualtrics.com/Server/RestApi.php?Request=sendSurveyToIndividual",
 				"&User=", username, 
 				"&Password=", password, 
 				"&SurveyID=", surveyId, 
@@ -197,7 +197,7 @@ sendSurveyToIndividual <- function(username, password, surveyId, sendDate,
 #' @export
 sendReminder <- function(username, password, parentEmailDistributionId, sendDate,
 				fromEmail, fromName, subject, messageId, libraryId) {
-	url = paste("http://eu.qualtrics.com/Server/RestApi.php?Request=sendReminder",
+	url = paste("http://yalesurvey.qualtrics.com/Server/RestApi.php?Request=sendReminder",
 				"&User=", username, 
 				"&Password=", password, 
 				"&ParentEmailDistributionID=", parentEmailDistributionId,
